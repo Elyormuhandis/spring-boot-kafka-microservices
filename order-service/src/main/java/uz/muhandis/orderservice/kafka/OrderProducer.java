@@ -13,8 +13,8 @@ import uz.muhandis.basedomains.dto.OrderEvent;
 @Service
 public class OrderProducer {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderProducer.class);
-    private NewTopic topic;
-    private KafkaTemplate<String, OrderEvent> kafkaTemplate;
+    private final NewTopic topic;
+    private final KafkaTemplate<String, OrderEvent> kafkaTemplate;
 
     public OrderProducer(NewTopic newTopic, KafkaTemplate<String, OrderEvent> kafkaTemplate) {
         this.topic = newTopic;
